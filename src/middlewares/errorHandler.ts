@@ -1,9 +1,9 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 
 /**
  * Middleware to handle errors in the application.
  */
-const errorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
+const errorHandler = (err: Error, req: Request, res: Response) => {
   console.error(err);
   res.status(500).json({
     message: "Internal Server Error",
